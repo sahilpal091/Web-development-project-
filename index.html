@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7fb" />
+    <title>Campus — Your college, connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="loginView" class="login-page">
+      <section class="login-intro">
+        <a class="brand" href="#" aria-label="Campus home"><span class="brand-mark">c</span> campus<span class="brand-period">.</span></a>
+        <div class="intro-copy">
+          <span class="eyebrow"><span class="live-dot"></span> YOUR CAMPUS, YOUR COMMUNITY</span>
+          <h1>College life is<br />better <span>together.</span></h1>
+          <p>A space for the people who get it. Catch up with classmates, find your next study buddy, and make campus feel a little smaller.</p>
+          <div class="student-proof">
+            <div class="avatar-stack" aria-hidden="true"><span class="avatar avatar-a">M</span><span class="avatar avatar-b">J</span><span class="avatar avatar-c">A</span><span class="avatar avatar-d">+</span></div>
+            <span><strong>Made for students.</strong><br />Only your college community.</span>
+          </div>
+        </div>
+        <div class="campus-note"><span>✳</span> The best of campus happens between classes.</div>
+      </section>
+
+      <section class="login-panel">
+        <div class="login-card">
+          <a class="brand mobile-brand" href="#"><span class="brand-mark">c</span> campus<span class="brand-period">.</span></a>
+          <div class="card-heading"><span class="card-icon">✳</span><span class="eyebrow">A LITTLE MORE CLOSE-KNIT</span></div>
+          <h2>Find your people.</h2>
+          <p class="card-subtitle">Sign in with your college email to join your campus.</p>
+          <form id="loginForm" novalidate>
+            <label for="collegeEmail">College email</label>
+            <div class="input-wrap"><span class="input-icon">✉</span><input id="collegeEmail" type="email" placeholder="you@yourcollege.edu" autocomplete="email" required /></div>
+            <p class="field-hint">Use your school email address to continue.</p>
+            <label for="password">Password</label>
+            <div class="input-wrap"><span class="input-icon">▣</span><input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required /><button class="password-toggle" type="button" aria-label="Show password">Show</button></div>
+            <div class="form-options"><label class="remember"><input type="checkbox" checked /> <span>Remember me</span></label><a href="#" id="forgotLink">Forgot password?</a></div>
+            <p class="form-message" id="formMessage" role="alert"></p>
+            <button class="primary-button" type="submit">Continue to campus <span>→</span></button>
+          </form>
+          <div class="divider"><span>NEW AROUND HERE?</span></div>
+          <button class="signup-button" id="signupButton" type="button">Create a student account <span>↗</span></button>
+          <p class="terms">By continuing, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</p>
+        </div>
+        <div class="panel-footer"><span>🔒</span> A community for college students, by design.</div>
+      </section>
+    </main>
+
+    <main id="homeView" class="home-page hidden">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <a class="brand" href="#" aria-label="Campus home"><span class="brand-mark">c</span> campus<span class="brand-period">.</span></a>
+          <label class="search-box"><span>⌕</span><input type="search" placeholder="Search your campus" aria-label="Search your campus" /></label>
+          <nav class="top-nav" aria-label="Main navigation"><button class="nav-item active" type="button"><span>⌂</span><small>Home</small></button><button class="nav-item" type="button" data-notice="Your campus groups are coming soon."><span>♧</span><small>Groups</small></button><button class="nav-item" type="button" data-notice="Campus events are coming soon."><span>▦</span><small>Events</small></button></nav>
+          <button class="profile-button" id="profileButton" type="button"><span class="profile-avatar">S</span><span class="profile-name">Student</span><span class="chevron">⌄</span></button>
+        </div>
+      </header>
+      <div class="home-layout">
+        <aside class="left-sidebar">
+          <div class="campus-card"><div class="campus-banner"><span>✳</span></div><div class="campus-card-body"><div class="campus-seal">U</div><h3 id="campusName">Your Campus</h3><p>Student community</p><div class="campus-stats"><span><strong>2.4k</strong> students</span><span><strong>38</strong> groups</span></div></div></div>
+          <nav class="side-links" aria-label="Campus shortcuts"><button class="side-link selected" type="button"><span>⌂</span> Your feed</button><button class="side-link" type="button" data-notice="Your campus groups are coming soon."><span>♧</span> Study groups</button><button class="side-link" type="button" data-notice="Campus events are coming soon."><span>▦</span> Events near you</button><button class="side-link" type="button" data-notice="Marketplace is coming soon."><span>◇</span> Student marketplace</button></nav>
+          <div class="sidebar-note"><span>✦</span><div><strong>Good things happen here.</strong><p>Share something with your campus community.</p></div></div>
+          <button class="logout-button" id="logoutButton" type="button">↪ &nbsp; Sign out</button>
+        </aside>
+
+        <section class="feed-column" aria-label="Campus feed">
+          <div class="welcome-row"><div><span class="eyebrow">MONDAY, YOUR CAMPUS</span><h1>Hey there, <span id="welcomeName">student</span> <span class="wave">✳</span></h1><p>Here's what's happening around campus.</p></div><span class="welcome-emoji">☀</span></div>
+          <div class="composer card"><div class="composer-top"><span class="profile-avatar composer-avatar" id="composerAvatar">S</span><button class="composer-prompt" id="composerPrompt" type="button">What's happening on campus?</button></div><textarea id="postInput" class="post-input hidden" placeholder="Share something with your campus..." rows="3" maxlength="500"></textarea><div class="composer-bottom"><span class="composer-campus">✳ &nbsp; Sharing with your campus</span><button class="post-button" id="postButton" type="button" disabled>Post <span>↑</span></button></div></div>
+          <div class="feed-toolbar"><h2>Your campus feed</h2><button type="button" data-notice="You're seeing the latest campus posts.">Latest <span>⌄</span></button></div>
+          <div id="postList" class="post-list">
+            <article class="post-card card"><div class="post-header"><span class="post-avatar avatar-rose">L</span><div class="post-byline"><strong>Leah Martinez <span class="verified">✓</span></strong><span>Biology · 2nd year <b>·</b> 24 min ago</span></div><button class="more-button" type="button" aria-label="More post options" data-notice="Post options are coming soon.">···</button></div><p class="post-copy">Found the perfect study spot on the third floor of the library 🌿 Somehow the sunlight makes biochem feel a little less scary. Anyone want to join?</p><div class="post-tags"><span>#studyspots</span><span>#campuslife</span></div><div class="post-image study-image"><span class="sun-shape"></span><span class="book-shape">✦</span><div class="image-caption">little moments<br />between classes</div></div><div class="post-actions"><button class="like-button" type="button"><span>♡</span> <b>Like</b> <em>18</em></button><button type="button" data-notice="Comments are coming soon."><span>◯</span> Comment <em>4</em></button><button type="button" data-notice="Sharing is coming soon."><span>↗</span> Share</button></div></article>
+            <article class="post-card card"><div class="post-header"><span class="post-avatar avatar-blue">D</span><div class="post-byline"><strong>Dev Patel <span class="verified">✓</span></strong><span>Computer Science · 3rd year <b>·</b> 1 hr ago</span></div><button class="more-button" type="button" aria-label="More post options" data-notice="Post options are coming soon.">···</button></div><p class="post-copy">Free coffee in the engineering building lobby until 3pm! The robotics club has extras from today's showcase. ☕</p><div class="post-actions"><button class="like-button" type="button"><span>♡</span> <b>Like</b> <em>32</em></button><button type="button" data-notice="Comments are coming soon."><span>◯</span> Comment <em>7</em></button><button type="button" data-notice="Sharing is coming soon."><span>↗</span> Share</button></div></article>
+          </div>
+          <p class="demo-note">A little preview of your campus community ✨</p>
+        </section>
+
+        <aside class="right-sidebar"><div class="right-card"><div class="right-card-title"><h3>On campus this week</h3><button type="button" data-notice="More campus events are coming soon.">See all</button></div><div class="event-row"><span class="event-date"><b>18</b> OCT</span><div><strong>Fall Fest on the Quad</strong><p>Today · 4:00 PM</p><span class="event-tag">✦ &nbsp; Student life</span></div></div><div class="event-row"><span class="event-date date-purple"><b>20</b> OCT</span><div><strong>Midterm study session</strong><p>Wed · 6:30 PM</p><span class="event-tag tag-purple">⌘ &nbsp; Study group</span></div></div><button class="all-events" type="button" data-notice="Campus events are coming soon.">Explore campus events <span>→</span></button></div>
+          <div class="right-card people-card"><div class="right-card-title"><h3>People you may know</h3><button type="button" data-notice="More student suggestions are coming soon.">See all</button></div><div class="person-row"><span class="person-avatar person-one">A</span><div><strong>Amara Johnson</strong><p>Psychology · 2nd year</p></div><button class="add-person" type="button" aria-label="Add Amara" data-notice="Friend requests are coming soon.">+</button></div><div class="person-row"><span class="person-avatar person-two">N</span><div><strong>Noah Kim</strong><p>Biology · 3rd year</p></div><button class="add-person" type="button" aria-label="Add Noah" data-notice="Friend requests are coming soon.">+</button></div><div class="person-row"><span class="person-avatar person-three">I</span><div><strong>Isabella Chen</strong><p>Design · 1st year</p></div><button class="add-person" type="button" aria-label="Add Isabella" data-notice="Friend requests are coming soon.">+</button></div></div><p class="footer-links">About · Community guidelines · Privacy<br />© 2024 Campus. Made for student life.</p></aside>
+      </div>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
